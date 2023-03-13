@@ -1,13 +1,234 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Pacifico&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+b {
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 15px;
+}
+
+.wrapper {
+  width: 1280px;
+  margin: 20px auto;
+}
+
+header {
+  position: relative;
+}
+
+header .logo {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+header .sopping-basket-button {
+  float: right;
+  cursor: pointer;
+  transition: color 500ms ease;
+  font-size: 20px;
+}
+
+header .sopping-basket-button:hover,
+header .sopping-basket-button.active {
+  color: #c0392b;
+}
+
+header .shop-basket {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  padding: 10px 10px 0px 10px;
+  width: 450px;
+  background-color: #ecf0f1;
+  z-index: 99;
+  -webkit-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.78);
+  -moz-box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.78);
+  box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.78);
+}
+
+header .shop-basket .item {
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+}
+
+header .shop-basket .item img {
+  width: 100px;
+  float: left;
+  margin-right: 10px;
+}
+
+header .shop-basket .item h2 {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+header .shop-basket .empty h2 {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+header .shop-basket .item b {
+  color: #27ae60;
+  font-weight: 500;
+}
+
+header .shop-basket .item .delete-icon {
+  color: #c0392b;
+  float: right;
+  position: relative;
+  top: -5px;
+  right: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 200ms ease;
+}
+
+header .shop-basket .item .delete-icon:hover {
+  color: #c4210e;
+  transform: scale(1.1);
+}
+
+header .shop-basket .sum {
+  float: left;
+  width: 100%;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #d35400;
+}
+
+
+header ul.nav {
+  float: right;
+  list-style: none;
+}
+
+header ul.nav li {
+  display: inline;
+  cursor: pointer;
+  margin-left: 25px;
+  transition: opacity 500ms ease;
+  font-weight: 600;
+}
+
+header ul.nav li:hover {
+  opacity: 0.5;
+}
+
+header .presentation {
+  margin: 10px 0px;
+  background: url("./img/header_img.jpg") no-repeat;
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: multiply;
+  background-color: #ecf0f1;
+  position: relative;
+}
+
+header .presentation::after {
+  content: "Four wheels carry the body, two wheels carry the soul!";
+  position: absolute;
+  top: 50px;
+  left: 25px;
+  width: 350px;
+  font-size: 40px;
+  font-weight: 600;
+  color: #ecf0f1;
+  text-shadow: rgb(34, 34, 34) 1px 0 10px;
+}
+
+.categories div {
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 0px 10px 10px 0px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 300ms ease;
+}
+
+.categories div:hover {
+  border-color: #27ae60;
+}
+
+main {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main .item {
+  width: 24%;
+  margin-bottom: 10px;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+main .item img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  transition: transform 500ms ease;
+}
+
+main .item img:hover { 
+  transform: scale(1.11);
+}
+
+main h2, main p, main b {
+  margin: 10px 20px;
+  color: #2c3e50;
+}
+
+main p {
+  padding-bottom: 20px;
+}
+
+main b { 
+  color: #27ae60;
+  position: absolute;
+  left: 0px;
+  bottom: 15px;
+}
+
+main .add-to-cart {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  background-color: #f39c12;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 300ms ease;
+}
+
+main .add-to-cart:hover {
+  transform: scale(1.11);
+}
+
+footer {
+  margin-top: 10px;
 }
