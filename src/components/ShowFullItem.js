@@ -10,7 +10,10 @@ export class ShowFullItem extends Component {
                 <div className='full-item-media'>
                     <img src={"./img/moto/" + this.props.item.img} alt='no img' />
                     <div className='video'>
-                        <iframe src={this.props.item.urlVideo} title={this.props.item.title} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>
+                        <b> Watch a video: </b>
+                        <a href={this.props.item.urlVideo} target="_blank" rel="noreferrer">
+                         {this.props.item.title}
+                        </a>
                     </div>
                 </div>
 
@@ -23,7 +26,7 @@ export class ShowFullItem extends Component {
                 <div className='allDesc'>
                     <ul>
                         {this.props.item.allDesc.map(el => (
-                            <li>{el}</li>
+                            <li key={el.id}>{el.text}</li>
                         ))}
                     </ul>
                 </div>
