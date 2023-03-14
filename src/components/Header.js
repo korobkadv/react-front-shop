@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaShoppingBasket } from "react-icons/fa";
 import Order from './Order';
 
-const showOrders = (props) => { 
+const showOrders = (props) => {
     let sum = 0;
     props.orders.forEach(el => sum += Number.parseFloat(el.price));
     return (
@@ -35,9 +35,10 @@ export default function Header(props) {
                     <li>About</li>
                     <li>LogIn</li>
                 </ul>
-                <FaShoppingBasket onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`sopping-basket-button ${cartOpen && 'active'}`} />
-
-                {cartOpen && ( 
+                <div className={`sopping-basket-button ${cartOpen && 'active'}`}>
+                    <FaShoppingBasket onClick={() => setCartOpen(cartOpen = !cartOpen)} className='sopping-basket-button-icon'  /> = {props.countOrders}
+                </div>
+                {cartOpen && (
                     <div className='shop-basket'>
                         {props.orders.length > 0 ? showOrders(props) : showNothing()}
                     </div>
